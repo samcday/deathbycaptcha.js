@@ -10,5 +10,6 @@
   "optionalDependencies": {},
   "engines": {
     "node": "*"
-  }
+  },
+  "main": "./deathbycaptcha"
 }
