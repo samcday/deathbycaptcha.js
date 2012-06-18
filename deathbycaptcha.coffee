@@ -4,7 +4,7 @@ http = require "http"
 
 class Captcha extends EventEmitter
 	constructor: (dbc, @uri) ->
-		@id = @uri.replace "#{dbc.endpoint}/captcha", ""
+		@id = @uri.replace "#{dbc.endpoint}/captcha/", ""
 
 		pollStatus = =>
 			request.get
@@ -49,7 +49,7 @@ module.exports = class DeathByCaptcha
 				when 303
 					captcha = new Captcha @, resp.headers.location
 					captcha.on "error", (err) -> cb err
-					captcha.on "solved", (solution) -> cb null, solution
+					captcha.on "solved", (solution) -> cb null, captcha.id, solution
 				when 403 then cb new Error "Invalid login / Insufficient credits."
 				when 400 then cb new Error "Invalid image."
 				when 503 then cb new Error "Temporarily unavailable."
