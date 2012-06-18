@@ -15,7 +15,6 @@ class Captcha extends EventEmitter
 				return @emit "error", err if err?
 				return @emit "error", new Error http.STATUS_CODES[resp.statusCode] unless resp.statusCode is 200
 				body = JSON.parse body
-				console.log body
 				setTimeout pollStatus, 2000 unless body.text
 				@emit "solved", body.text, body.is_correct if body.text
 		process.nextTick pollStatus
@@ -69,7 +68,6 @@ module.exports = class DeathByCaptcha
 		, (err, resp, body) ->
 			return cb err if err?
 			return cb new Error http.STATUS_CODES[resp.statusCode] unless resp.statusCode is 200
-			console.log body
 			return cb null
 	balance: (cb) ->
 		request.post 
