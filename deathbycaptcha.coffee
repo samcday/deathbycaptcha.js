@@ -71,3 +71,18 @@ module.exports = class DeathByCaptcha
 			return cb new Error http.STATUS_CODES[resp.statusCode] unless resp.statusCode is 200
 			console.log body
 			return cb null
+	balance: (cb) ->
+		request.post 
+			url: "#{@endpoint}/user"
+			headers:
+				accept: "application/json"
+			form:
+				username: @username
+				password: @password
+		, (err, resp, body) ->
+			return cb err if err?
+			return cb new Error http.STATUS_CODES[resp.statusCode] unless resp.statusCode is 200
+			body = JSON.parse body
+			{balance, rate} = body
+			credits = Math.floor balance / rate
+			cb null, credits, balance, rate
