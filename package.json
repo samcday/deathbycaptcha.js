@@ -1,0 +1,14 @@
+{
+  "author": "Sam Day <sam.c.day@gmail.com> (http://samcday.com.au/)",
+  "name": "deathbycaptcha",
+  "description": "DeathByCaptcha Node.js client",
+  "version": "0.0.1",
+  "dependencies": {
+    "request": "~2.9.202"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
