@@ -2,7 +2,7 @@
   "author": "Sam Day <sam.c.day@gmail.com> (http://samcday.com.au/)",
   "name": "deathbycaptcha",
   "description": "DeathByCaptcha Node.js client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "request": "~2.9.202"
   },
