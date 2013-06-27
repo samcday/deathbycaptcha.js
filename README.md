@@ -1,4 +1,4 @@
-# DeathByCaptcha.js `v0.0.2`
+# DeathByCaptcha.js `v0.0.3`
 
 Node.js client library for the [DeathByCaptcha](http://www.deathbycaptcha.com) service.
 
