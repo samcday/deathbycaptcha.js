@@ -3,13 +3,13 @@
   "name": "deathbycaptcha",
   "description": "DeathByCaptcha Node.js client",
   "version": "0.0.2",
-  "dependencies": {
-    "request": "~2.9.202"
-  },
   "devDependencies": {},
   "optionalDependencies": {},
   "engines": {
     "node": "*"
   },
-  "main": "./deathbycaptcha"
+  "main": "./deathbycaptcha",
+  "dependencies": {
+    "request": "~2.21.0"
+  }
 }
